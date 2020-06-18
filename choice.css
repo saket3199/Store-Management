@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: black;
+  }
+
+  
+ 
+.welcome_message {
+    text-align: center;
+    margin: 10px 0px;
+  }
+  
+  .welcome_message span {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .welcome_message .text1 {
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    background: black;
+    position: relative;
+    animation: text 3s 1;
+  }
+  
+  .welcome_message .text2 {
+    color: green;
+    font-size: 30px;
+    font-weight: 250;
+  }
+  
+  @keyframes text {
+    0% {
+      color: black;
+      margin-bottom: -40px;
+    }
+    30% {
+      letter-spacing: 25px;
+      margin-bottom: -40px;
+    }
+    85% {
+      letter-spacing: 8px;
+      margin-bottom: -10px;
+    }
+  } 
+
+
+
+.box{
+    width: 300px;
+    padding: 10px 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #191919;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .box h1{
+    color: white;
+    /* font-size: 0px; */
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .box input[type = "text"],.box input[type = "password"], .box input[type = "email"], .box input[type = "tel"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+  .box input[type = "text"]:focus,.box input[type = "password"]:focus, .box input[type = "email"]:focus, .box input[type = "tel"]:focus{
+    width: 280px;
+    border-color: #2ecc71;
+  }
+  
+  .box #login-form a {
+    text-decoration: none;
+  }
+  .box #login-form a div {
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .box #login-form a div:hover{
+    background: #2ecc71;
+  }
+  
+  
+  
+  .box input[type = "submit"] {
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .box input[type = "submit"]:hover{
+    background: #2ecc71;
+  }

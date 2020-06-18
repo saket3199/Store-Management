@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSSP - Admin Login</title>
+  <link rel="stylesheet" href="choice.css">
+</head>
+
+<body>
+  <div class="welcome_message">
+    <span class="text1">WELCOME TO</span>
+    <span class="text2">MSSP ADMIN ARENA</span>
+  </div>
+  <div id="login_div" class="box">
+    <h1>LOGIN FOR ADMIN</h1>
+    <form id="login-form">
+      <div class="inputBox">
+        <input type="text" name="" id="email_field" placeholder="EMAIL ID" required>
+      </div>
+      <a href="../RGIT/verification.html" target='_top'>
+        <div>NEXT</div>
+      </a>
+      <p style="color: white;">Don't have ACCOUNT?&nbsp;<a href="admin_signup.html" style="color: #2ecc71;">CREATE
+          ONE!</a></p>
+      <!-- <button onclick="login()">Login</button> -->
+    </form>
+  </div>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBg5Z512JcMTQi5Wp_B1Qj80sk36L0zzZ8",
+      authDomain: "hackathon-1423a.firebaseapp.com",
+      databaseURL: "https://hackathon-1423a.firebaseio.com",
+      projectId: "hackathon-1423a",
+      storageBucket: "hackathon-1423a.appspot.com",
+      messagingSenderId: "1088390242958",
+      appId: "1:1088390242958:web:cf44934c96791c93489fdf"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const auth = firebase.auth();
+
+  </script>
+  <!-- <script src="index.js"></script> -->
+</body>
+
+</html>

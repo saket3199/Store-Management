@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=.box, initial-scale=1.0">
+  <title>SignUp</title>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script type="text/javascript">
+    firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    // User is signed in.
+    // console.log("Running");
+    //  function changing() {
+    // document.getElementById("login").innerHTML = 'LOGOUT';
+    // console.log("Running");
+
+    // window.open("index.html");
+    // }
+
+
+
+
+    // document.getElementById("user_div").style.display = "block";
+    // document.getElementById("signup_div").style.display = "none";
+
+    var user = firebase.auth().currentUser;
+
+    // if (user != null) {
+
+    //   var email_id = user.email;
+    //   document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+
+    // }
+
+  } else {
+    // No user is signed in.
+
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("signup_div").style.display = "block";
+
+  }
+});
+
+const signupForm = document.querySelector('#signup-form');
+signupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // get user info
+  const email1 = signupForm['signup-email'].value;
+  const password1 = signupForm['signup-password'].value;
+  const password2 = signupForm['confirm-password'].value;
+  if (password1 != password2) {
+    alert("\nPassword did not match: Please try again...")
+  }
+  else {
+    alert("Password Match: Logging You In!")
+    auth.createUserWithEmailAndPassword(email1, password1).then(cred => {
+      signupForm.reset();
+    }).catch(function (error) {
+      alert(error.message);
+    });
+  }
+});
+function logout() {
+  firebase.auth().signOut();
+}
+
+  </script>
+  <style type="text/css">
+    body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: black;
+}
+
+.welcome_message {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.welcome_message span {
+  display: block;
+  color: white;
+  text-transform: uppercase;
+}
+
+.welcome_message .text1 {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+  background: black;
+  position: relative;
+  animation: text 3s 1;
+}
+
+.welcome_message .text2 {
+  color: green;
+  font-size: 30px;
+  font-weight: 250;
+}
+
+@keyframes text {
+  0% {
+    color: black;
+    margin-bottom: -40px;
+  }
+  30% {
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+  85% {
+    letter-spacing: 8px;
+    margin-bottom: -10px;
+  }
+}
+
+
+.box{
+  width: 300px;
+  padding: 10px 50px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  text-align: center;
+  border-radius: 5px;
+}
+.box h1{
+  color: white;
+  /* font-size: 0px; */
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "password"], .box input[type = "email"], .box input[type = "tel"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus, .box input[type = "email"]:focus, .box input[type = "tel"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+.submit {
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 20px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.submit:hover{
+  background: #2ecc71;
+}
+
+
+
+.box input[type = "submit"] {
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="welcome_message">
+    <span class="text1">WELCOME TO</span>
+    <span class="text2">OUR WAREHOUSE WEBSITE</span>
+  </div>
+  <div id="signup_div" class="box">
+    <h1>SIGN UP</h1>
+    <form id="signup-form">
+      <!--  <div class="inputBox">
+                <input type="text" name="" id="" required="">
+                <label for="">First Name</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="" id="" required="">
+                <label for="">Last Name</label>
+            </div> -->
+      <div class="inputBox">
+        <input type="email" name="" id="signup-email" required placeholder="EMAIL">
+      </div>
+      <div class="inputBox">
+        <input type="tel" name="" id="" required placeholder="CONTACT NO.">
+      </div>
+
+      <div class="inputBox">
+        <input type="password" name="" id="signup-password" required="" placeholder="PASSWORD">
+      </div>
+      <div class="inputBox">
+        <input type="password" name="" id="confirm-password" required="" placeholder="CONFIRM PASSWORD">
+      </div>
+      <a href="index1.html"> <div>go</div></a>
+      <p style="color: white;">ALREADY HAVE AN ACCOUNT?&nbsp;&nbsp;<a href="login.html"
+          style="color: #2ecc71;"><div>LOGIN</div></a></p>
+    </form>
+  </div>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBg5Z512JcMTQi5Wp_B1Qj80sk36L0zzZ8",
+      authDomain: "hackathon-1423a.firebaseapp.com",
+      databaseURL: "https://hackathon-1423a.firebaseio.com",
+      projectId: "hackathon-1423a",
+      storageBucket: "hackathon-1423a.appspot.com",
+      messagingSenderId: "1088390242958",
+      appId: "1:1088390242958:web:cf44934c96791c93489fdf"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const auth = firebase.auth();
+
+      //   window.open("index.html");
+      //   document.getElementById("login").style.display = "none";
+      //   console.log("running")
+      //   document.getElementById("products").style.display = "block";
+      //   document.getElementById("signin").style.display = "none";
+      //   document.getElementById("logout").style.display = "block";
+
+  </script>
+  <!-- <script src="signup.js"></script> -->
+
+</body>
+
+</html>

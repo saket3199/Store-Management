@@ -1,0 +1,130 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica Neue', 'Calibri', Arial, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+#app {
+  background: #263238;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  position: relative;
+  height: auto;
+}
+/* .scans {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+} */
+
+.preview-container {
+  /* position: absolute; */
+  width: 100%;
+  /* background-color: black; */
+  top: 0;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  /* width: 600px;
+  height: 300px; */
+}
+
+#preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* text-align: center; */
+}
+
+.plist {
+  /* justify-content: center; */
+  /* text-align: center; */
+  /* background-color: black; */
+  width: 650px;
+  height: auto;
+  border: 2px solid black;
+  display: block;
+  left: 30%;
+  position: relative;
+  top: 60%;
+  /* transform: translate(-50%, -50%); */
+}
+
+.plist #productList {
+  position: relative;
+  text-align: left;
+}
+
+/* .sidebar {
+  background: #eceff1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+}
+.sidebar h2 {
+  font-weight: normal;
+  font-size: 1.0rem;
+  background: #607d8b;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+}
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.sidebar li {
+  line-height: 175%;
+  white-space: nowrap;
+  overflow: hidden;
+  /* text-wrap: none; */
+  /* text-overflow: ellipsis;
+} */
+/* .cameras ul {
+  padding: 15px 20px;
+}
+.cameras .active {
+  font-weight: bold;
+  color: #009900;
+} */
+/* .cameras a {
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cameras a:hover {
+  text-decoration: underline;
+}
+.scans li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.scans-enter-active {
+  transition: background 3s;
+}
+.scans-enter {
+  background: yellow;
+}
+.empty {
+  font-style: italic;
+}
+.preview-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+} */
+
+
+
+

@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <title>Instascan &ndash; Demo</title>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="qrCodeStyle.css">
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- <div class="sidebar"></div> -->
+    <!-- <section class="cameras">
+          <h2>Cameras</h2>
+          <ul>
+            <li v-if="cameras.length === 0" class="empty">No cameras found</li>
+            <li v-for="camera in cameras">
+              <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">{{ formatName(camera.name) }}</span>
+              <span v-if="camera.id != activeCameraId" :title="formatName(camera.name)">
+                <a @click.stop="selectCamera(camera)">{{ formatName(camera.name) }}</a>
+              </span>
+            </li>
+          </ul>
+        </section>
+        <section class="scans">
+          <h2>Scans</h2>
+          <ul v-if="scans.length === 0">
+            <li class="empty">No product scans yet</li>
+          </ul>
+          <transition-group name="scans" tag="ul">
+            <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
+          </transition-group>
+        </section>
+      </div> -->
+    <div class="preview-container">
+      <video id="preview"></video>
+    </div>
+  </div>
+
+  <div class="plist">
+    <ul id='productList'></ul>
+  </div>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBg5Z512JcMTQi5Wp_B1Qj80sk36L0zzZ8",
+      authDomain: "hackathon-1423a.firebaseapp.com",
+      databaseURL: "https://hackathon-1423a.firebaseio.com",
+      projectId: "hackathon-1423a",
+      storageBucket: "hackathon-1423a.appspot.com",
+      messagingSenderId: "1088390242958",
+      appId: "1:1088390242958:web:cf44934c96791c93489fdf"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

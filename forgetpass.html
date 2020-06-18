@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forget Password</title>
+	 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script type="text/javascript">
+    function fpass(){
+  const signupForm = document.querySelector('#reset-form');
+  signupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email1 = signupForm['reset-email'].value;
+  if(email1!=""){
+    auth.sendPasswordResetEmail(email1).then(function()
+      { 
+        window.alert("Email with Instructions have been sent to you.");
+        signupForm.reset();
+         document.getElementById("signup_div").style.display = "none";
+    document.getElementById("call").style.display = "block";
+
+    })
+    .catch(function(error)
+    {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      window.alert("Message:" + errorMessage);
+    });
+  }
+  else
+  {
+     window.alert("Enter Email first.");
+  }
+});
+}
+  </script>
+  <style type="text/css">
+    *{
+  padding:0px;
+  margin:0px;
+  color:#808080;
+  font-family:arial;
+  box-sizing:border-box;
+}
+body{
+  background-color:#0062c4;
+}
+a{text-decoration:none;font-weight:600;}
+.link{color:#00aced;}
+p{margin:5px 0px;}
+.box{
+  width:400px;
+  height:auto;
+  margin:0 auto;
+  background-color:white;
+}
+.inner-box{
+  padding:20px;
+}
+.box h1,h2,h3,h4,h5,h6{
+  text-align:center;
+  margin:5px 0px;
+}
+.forgot{
+  float:right;
+}
+input[type="text"],input[type="password"],input[type="submit"],input[type="email"]{
+  width:100%;
+  padding:10px;
+  margin:10px 0px;
+  border:2px solid #c0c0c0;
+}
+input[type="submit"]{
+  border:1px solid #3B5998;
+  background-color:#3B5998;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+  </style>
+ <!-- <link rel="stylesheet" type="text/css" href="forgetstyles.css"> -->
+</head>
+<body>
+<div id="signup_div" class="box">
+        <h2>Reset Password</h2>
+        <form action="recover.html" id="reset-form" class="inner-box" >
+            <div class="inputBox" class="forgot">
+                <label for="">Email</label>
+                <input type="Email" name="" id="reset-email" required="" placeholder="Enter Your Email">
+                
+            </div>
+            <input  onclick="fpass()" type="submit" value="Send Recovery Link">
+        </form>
+    </div>
+    <div id="call" style="display: none">
+    <div class="box">
+  
+    <div class="inner-box">
+    
+    <h3>Email Verification Link Has Been Sent !</h3>
+    
+    <p style="text-align:center;" >We send varification link on your providing email address please confrom your email address and login to your account.</p>
+    <br />
+    <p style="text-align:center;" >Go Back to <a class="link" href="login.html">Login Page</a></p>
+    </div>
+  </div>
+</body>
+   <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBg5Z512JcMTQi5Wp_B1Qj80sk36L0zzZ8",
+    authDomain: "hackathon-1423a.firebaseapp.com",
+    databaseURL: "https://hackathon-1423a.firebaseio.com",
+    projectId: "hackathon-1423a",
+    storageBucket: "hackathon-1423a.appspot.com",
+    messagingSenderId: "1088390242958",
+    appId: "1:1088390242958:web:cf44934c96791c93489fdf"
+  };
+  firebase.initializeApp(firebaseConfig);
+  // Initialize Firebase
+   const auth = firebase.auth();
+  
+</script>
+<!-- <script src="fpass.js"></script> -->
+</html>

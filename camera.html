@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="camerastyle.css">
+</head>
+
+<body>
+    <div class="update">
+        <a href="qrCode.html">
+            <span class="glyphicon glyphicon-camera cam"></span>
+        </a>
+    </div>
+    <ul id='productList'></ul> 
+    <div>
+        <h2>Name of product</h2>
+        <h3 id="name">
+
+        </h3><br>
+
+        <h2>Price</h2>
+        <p id="price"></p>
+    </div>
+    <ul id='getInfo'></ul>
+    <div class="checkout">
+        <button class="btn btn-block" style="display: none;"><a href="checkout">Button</a></button>
+    </div>
+    <div id="NoItem">
+        <p style="display: none;">No items selected</p>
+    </div>
+    <script>
+   
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBg5Z512JcMTQi5Wp_B1Qj80sk36L0zzZ8",
+      authDomain: "hackathon-1423a.firebaseapp.com",
+      databaseURL: "https://hackathon-1423a.firebaseio.com",
+      projectId: "hackathon-1423a",
+      storageBucket: "hackathon-1423a.appspot.com",
+      messagingSenderId: "1088390242958",
+      appId: "1:1088390242958:web:cf44934c96791c93489fdf"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const db=firebase.firestore();
+    const auth = firebase.auth();
+
+
+    </script>
+     <script type="text/javascript" src="camera.js"></script>
+</body>
+</html>

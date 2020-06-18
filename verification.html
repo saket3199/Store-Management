@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phoneVerification</title>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="verify_otp.css" type="text/css">
+</head>
+
+<body>
+    <div id="call3">
+        <h1>VERIFICATION PROCESS</h1>
+        <form class="box">
+            <p style="color: white; font-size: 20px;">ENTER YOUR CONTACT NO.</p>
+            <input type="tel" id="number" value="+91"><br><br>
+            <div id="recaptcha-container"></div><br>
+            <button type="button" id="button_send_code" onclick="phoneAuth();">SendCode</button>
+        </form><br>
+    </div>
+    <div id="call2" style="display: none;">
+        <h1>Enter Verification code</h1>
+        <form class="box">
+            <input type="text" id="verificationCode" placeholder="Enter verification code">
+            <button type="button" onclick="codeverify();">Verify code</button>
+            <a href="index.html" target="_top">
+                <button type='button'>SIGN UP</button>
+            </a>
+
+        </form>
+            
+    </div>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBg5Z512JcMTQi5Wp_B1Qj80sk36L0zzZ8",
+            authDomain: "hackathon-1423a.firebaseapp.com",
+            databaseURL: "https://hackathon-1423a.firebaseio.com",
+            projectId: "hackathon-1423a",
+            storageBucket: "hackathon-1423a.appspot.com",
+            messagingSenderId: "1088390242958",
+            appId: "1:1088390242958:web:cf44934c96791c93489fdf"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="phoneVerify.js"></script>
+</body>
+
+</html>
